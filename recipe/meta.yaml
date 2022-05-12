@@ -1,5 +1,5 @@
 {% set name = "pythx" %}
-{% set version = "1.7.1" %}
+{% set version = "1.7.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pythx-{{ version }}.tar.gz
-  sha256: f93271f3a2bcc62c7b91abd82965005bae7a019ec364cdc5c927afa0b446395d
+  sha256: e2346d47c984f577636eef79f0c860eb091f3198861851c537443792a64643fd
 
 build:
   number: 0
