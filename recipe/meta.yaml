@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pythx-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pythx-{{ version }}.tar.gz
   sha256: f93271f3a2bcc62c7b91abd82965005bae7a019ec364cdc5c927afa0b446395d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,12 +19,12 @@ requirements:
   host:
     - pip
     - pytest-runner
-    - python >=3.6,<4
+    - python {{ python_min }}
   run:
     - inflection ==0.5.1
     - mythx-models ==2.0.1
     - pyjwt ==1.7.1
-    - python >=3.6,<4
+    - python >={{ python_min }},<4
     - python-dateutil ==2.8.1
     - requests ==2.25.0
 
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/dmuhs/pythx
